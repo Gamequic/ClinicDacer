@@ -2,86 +2,45 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const services = [
-  {
-    icon: '🤲',
-    title: 'Masajes Terapéuticos',
-    desc: 'Técnicas especializadas de masaje para aliviar tensión muscular, reducir el estrés y promover la relajación profunda del cuerpo.',
-    color: '#009bde',
-    gradient: 'linear-gradient(135deg, rgba(0,155,222,0.15), rgba(0,155,222,0.03))',
-    border: 'rgba(0,155,222,0.3)',
-  },
-  {
-    icon: '⚡',
-    title: 'Electroterapia',
-    desc: 'Tratamiento con corrientes eléctricas de baja y media frecuencia para aliviar el dolor, reducir inflamación y acelerar la recuperación.',
-    color: '#b6c72b',
-    gradient: 'linear-gradient(135deg, rgba(182,199,43,0.15), rgba(182,199,43,0.03))',
-    border: 'rgba(182,199,43,0.3)',
-  },
-  {
-    icon: '🫧',
-    title: 'Cupping (Ventosas)',
-    desc: 'Terapia milenaria que utiliza ventosas para mejorar la circulación, liberar toxinas y tratar contracturas profundas del tejido.',
-    color: '#009bde',
-    gradient: 'linear-gradient(135deg, rgba(0,155,222,0.15), rgba(0,155,222,0.03))',
-    border: 'rgba(0,155,222,0.3)',
-  },
-  {
-    icon: '💪',
-    title: 'Contracturas Musculares',
-    desc: 'Tratamiento especializado para la liberación de contracturas, puntos gatillo y tensión muscular crónica con técnicas avanzadas.',
-    color: '#b6c72b',
-    gradient: 'linear-gradient(135deg, rgba(182,199,43,0.15), rgba(182,199,43,0.03))',
-    border: 'rgba(182,199,43,0.3)',
-  },
-  {
-    icon: '🌊',
-    title: 'Drenaje Linfático',
-    desc: 'Técnica suave y rítmica que estimula el sistema linfático, reduce edemas, mejora la circulación y fortalece el sistema inmune.',
-    color: '#009bde',
-    gradient: 'linear-gradient(135deg, rgba(0,155,222,0.15), rgba(0,155,222,0.03))',
-    border: 'rgba(0,155,222,0.3)',
-  },
-  {
-    icon: '🩺',
-    title: 'Presoterapia',
-    desc: 'Compresión neumática secuencial que mejora la circulación, reduce retención de líquidos y acelera la recuperación muscular post-ejercicio.',
-    color: '#b6c72b',
-    gradient: 'linear-gradient(135deg, rgba(182,199,43,0.15), rgba(182,199,43,0.03))',
-    border: 'rgba(182,199,43,0.3)',
-  },
+  { icon: '🤲', title: 'Masajes Terapéuticos', desc: 'Técnicas especializadas de masaje para aliviar tensión muscular, reducir el estrés y promover la relajación profunda del cuerpo.', color: '#009bde', bg: '#e8f5fd', border: 'rgba(0,155,222,0.2)' },
+  { icon: '⚡', title: 'Electroterapia', desc: 'Tratamiento con corrientes eléctricas de baja y media frecuencia para aliviar el dolor, reducir inflamación y acelerar la recuperación.', color: '#7aaa00', bg: '#f2f8e6', border: 'rgba(122,170,0,0.22)' },
+  { icon: '🫧', title: 'Cupping (Ventosas)', desc: 'Terapia milenaria que utiliza ventosas para mejorar la circulación, liberar toxinas y tratar contracturas profundas del tejido.', color: '#009bde', bg: '#e8f5fd', border: 'rgba(0,155,222,0.2)' },
+  { icon: '💪', title: 'Contracturas Musculares', desc: 'Tratamiento especializado para la liberación de contracturas, puntos gatillo y tensión muscular crónica con técnicas avanzadas.', color: '#7aaa00', bg: '#f2f8e6', border: 'rgba(122,170,0,0.22)' },
+  { icon: '🌊', title: 'Drenaje Linfático', desc: 'Técnica suave y rítmica que estimula el sistema linfático, reduce edemas, mejora la circulación y fortalece el sistema inmune.', color: '#009bde', bg: '#e8f5fd', border: 'rgba(0,155,222,0.2)' },
+  { icon: '🩺', title: 'Presoterapia', desc: 'Compresión neumática secuencial que mejora la circulación, reduce retención de líquidos y acelera la recuperación muscular post-ejercicio.', color: '#7aaa00', bg: '#f2f8e6', border: 'rgba(122,170,0,0.22)' },
 ];
 
 export default function Services() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="servicios" ref={ref} style={styles.section}>
-      {/* Background accent */}
-      <div style={styles.bgAccent} />
-
-      <div style={styles.container}>
-        {/* Section header */}
-        <motion.div
-          style={styles.header}
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-        >
-          <span style={styles.eyebrow}>Lo que hacemos</span>
-          <h2 style={styles.title}>Nuestros Tratamientos</h2>
-          <p style={styles.subtitle}>
-            Cada terapia está diseñada para tu recuperación integral, combinando técnicas tradicionales
-            con tecnología de vanguardia.
-          </p>
-          <div style={styles.titleUnderline} />
+    <section id="servicios" ref={ref} style={s.section}>
+      <div style={s.container}>
+        <motion.div style={s.header}
+          initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}>
+          <span style={s.eyebrow}>Lo que hacemos</span>
+          <h2 style={s.title}>Nuestros Tratamientos</h2>
+          <p style={s.subtitle}>Cada terapia está diseñada para tu recuperación integral, combinando técnicas tradicionales con tecnología de vanguardia.</p>
+          <div style={s.underline} />
         </motion.div>
 
-        {/* Services grid */}
-        <div style={styles.grid} className="services-grid">
+        <div style={s.grid} className="services-grid">
           {services.map((svc, i) => (
-            <ServiceCard key={svc.title} svc={svc} index={i} inView={inView} />
+            <motion.div key={svc.title} style={s.card}
+              initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -5, boxShadow: '0 12px 36px rgba(0,100,180,0.13)' }}>
+              <div style={{ ...s.iconWrap, background: svc.bg, border: `1.5px solid ${svc.border}` }}>
+                <span style={s.icon}>{svc.icon}</span>
+              </div>
+              <h3 style={{ ...s.cardTitle, color: svc.color }}>{svc.title}</h3>
+              <p style={s.cardDesc}>{svc.desc}</p>
+              <motion.div style={{ ...s.cardLine, background: svc.color }}
+                initial={{ scaleX: 0 }} whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }} />
+            </motion.div>
           ))}
         </div>
       </div>
@@ -89,148 +48,19 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ svc, index, inView }) {
-  const isHovered = useRef(false);
-
-  return (
-    <motion.div
-      style={{
-        ...styles.card,
-        background: svc.gradient,
-        borderColor: 'rgba(255,255,255,0.06)',
-      }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{
-        scale: 1.03,
-        borderColor: svc.border,
-        boxShadow: `0 8px 40px ${svc.color}22`,
-        y: -4,
-      }}
-    >
-      {/* Icon */}
-      <div style={{ ...styles.iconWrap, background: `${svc.color}18`, border: `1px solid ${svc.border}` }}>
-        <span style={styles.icon}>{svc.icon}</span>
-      </div>
-
-      {/* Content */}
-      <h3 style={{ ...styles.cardTitle, color: svc.color }}>{svc.title}</h3>
-      <p style={styles.cardDesc}>{svc.desc}</p>
-
-      {/* Bottom accent line */}
-      <motion.div
-        style={{ ...styles.cardLine, background: svc.color }}
-        initial={{ scaleX: 0 }}
-        whileHover={{ scaleX: 1 }}
-        transition={{ duration: 0.3 }}
-      />
-    </motion.div>
-  );
-}
-
-const styles = {
-  section: {
-    position: 'relative',
-    padding: '120px 24px',
-    overflow: 'hidden',
-  },
-  bgAccent: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '800px',
-    height: '800px',
-    borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(0,155,222,0.04) 0%, transparent 70%)',
-    pointerEvents: 'none',
-  },
-  container: {
-    maxWidth: '1280px',
-    margin: '0 auto',
-    position: 'relative',
-    zIndex: 1,
-  },
-  header: {
-    textAlign: 'center',
-    marginBottom: '72px',
-  },
-  eyebrow: {
-    display: 'inline-block',
-    fontSize: '0.75rem',
-    letterSpacing: '0.25em',
-    textTransform: 'uppercase',
-    color: '#009bde',
-    marginBottom: '16px',
-    padding: '6px 16px',
-    background: 'rgba(0,155,222,0.1)',
-    borderRadius: '100px',
-    border: '1px solid rgba(0,155,222,0.2)',
-  },
-  title: {
-    fontSize: 'clamp(2rem, 4vw, 3rem)',
-    fontWeight: '800',
-    color: '#ffffff',
-    marginBottom: '16px',
-  },
-  subtitle: {
-    fontSize: '1rem',
-    color: 'rgba(255,255,255,0.55)',
-    maxWidth: '500px',
-    margin: '0 auto',
-    lineHeight: 1.7,
-  },
-  titleUnderline: {
-    width: '60px',
-    height: '3px',
-    background: 'linear-gradient(90deg, #009bde, #b6c72b)',
-    margin: '24px auto 0',
-    borderRadius: '2px',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '24px',
-  },
-  card: {
-    position: 'relative',
-    padding: '36px 32px',
-    borderRadius: '16px',
-    border: '1px solid',
-    overflow: 'hidden',
-    cursor: 'default',
-    transition: 'all 0.3s ease',
-  },
-  iconWrap: {
-    width: '56px',
-    height: '56px',
-    borderRadius: '14px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '20px',
-  },
-  icon: {
-    fontSize: '1.6rem',
-  },
-  cardTitle: {
-    fontSize: '1.15rem',
-    fontWeight: '700',
-    marginBottom: '12px',
-    letterSpacing: '-0.01em',
-  },
-  cardDesc: {
-    fontSize: '0.9rem',
-    color: 'rgba(255,255,255,0.6)',
-    lineHeight: 1.7,
-  },
-  cardLine: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: '2px',
-    transformOrigin: 'left',
-  },
+const s = {
+  section: { padding: '110px 24px', background: '#ffffff' },
+  container: { maxWidth: '1280px', margin: '0 auto' },
+  header: { textAlign: 'center', marginBottom: '64px' },
+  eyebrow: { display: 'inline-block', fontSize: '0.72rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#009bde', marginBottom: '14px', padding: '5px 16px', background: '#e8f5fd', borderRadius: '100px', border: '1px solid rgba(0,155,222,0.2)', fontWeight: '600' },
+  title: { fontSize: 'clamp(1.9rem, 4vw, 2.9rem)', fontWeight: '800', color: '#1a2332', marginBottom: '14px' },
+  subtitle: { fontSize: '1rem', color: '#64748b', maxWidth: '500px', margin: '0 auto', lineHeight: 1.75 },
+  underline: { width: '50px', height: '3px', background: 'linear-gradient(90deg, #009bde, #7aaa00)', margin: '20px auto 0', borderRadius: '2px' },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' },
+  card: { position: 'relative', padding: '32px 28px', borderRadius: '16px', background: '#ffffff', border: '1.5px solid #e2eaf3', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,100,180,0.06)', transition: 'all 0.25s ease' },
+  iconWrap: { width: '54px', height: '54px', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' },
+  icon: { fontSize: '1.5rem' },
+  cardTitle: { fontSize: '1.1rem', fontWeight: '700', marginBottom: '10px' },
+  cardDesc: { fontSize: '0.88rem', color: '#64748b', lineHeight: 1.75 },
+  cardLine: { position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', transformOrigin: 'left' },
 };
