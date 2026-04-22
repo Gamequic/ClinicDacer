@@ -49,7 +49,7 @@ export default function Footer() {
       <div style={styles.bottom}>
         <div style={styles.bottomInner}>
           <span style={styles.copy}>© 2024 Clinic Dacer. Todos los derechos reservados.</span>
-          <span style={styles.copy}>Monterrey, Nuevo León, México</span>
+          <span style={styles.copy}>Hecho por <a href="https://calleros.me" target="_blank" rel="noopener noreferrer" style={styles.credit}>calleros.me</a></span>
         </div>
       </div>
     </footer>
@@ -149,5 +149,10 @@ const styles = {
     fontSize: '0.72rem',
     color: 'rgba(255,255,255,0.3)',
     letterSpacing: '0.05em',
+  },
+  credit: {
+    color: '#009bde',
+    textDecoration: 'none',
+    fontWeight: '500',
   },
 };
